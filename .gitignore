@@ -1,0 +1,25 @@
+
+# Python files
+__pycache__/
+*.pyc
+
+# Private user information
+users.json
+otps.json
+reset_tokens.json
+config.json
+seed.py
+
+# Secret files
+.env
+.env.*
+
+# Python environment
+.venv/
+venv/
+
+# React files
+node_modules/
+dist/
+build/
+

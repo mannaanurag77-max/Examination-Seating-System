@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examination Seating Arrangement System — 3D Hall &amp; Dashboard</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Matte Glassmorphism 3D Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+</head>
+<body>
+  <!-- React Mount Point -->
+  <div id="root">
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; color: #9ba0ae; font-family: 'Inter', sans-serif;">
+      <div style="width: 48px; height: 48px; border: 3px solid rgba(255,255,255,0.1); border-top-color: #5fa8a0; border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+      <div style="font-weight: 600; font-size: 1.1rem; color: #e8e9ee;">Loading Examination Seating System 3D...</div>
+      <div id="loading-status" style="font-size: 0.82rem; color: #676d7d;">Connecting to Python Backend Server...</div>
+    </div>
+    <style>
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </div>
+
+  <!-- Diagnostic Handler -->
+  <script>
+    window.addEventListener('error', function(e) {
+      var statusEl = document.getElementById('loading-status');
+      if (statusEl) {
+        statusEl.innerHTML = '<span style="color: #c98a8a;">Script Error: ' + (e.message || 'Check console') + '</span><br><br><a href="http://localhost:5000" style="color: #5fa8a0; text-decoration: underline;">Open http://localhost:5000 directly in browser</a>';
+      }
+    });
+  </script>
+
+  <!-- Vendor Scripts (Offline & Local Ready) -->
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
+
+  <!-- Fallback to CDN if local files not found -->
+  <script>
+    if (!window.React) {
+      document.write('<script src="https://unpkg.com/react@18/umd/react.production.min.js"><\/script>');
+      document.write('<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- Precompiled Fast Production React App -->
+  <script src="app.js"></script>
+</body>
+</html>
